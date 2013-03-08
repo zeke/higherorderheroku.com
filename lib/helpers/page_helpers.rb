@@ -1,3 +1,5 @@
+require "uri"
+
 module PageHelpers
 
   INDEX_LIMIT = 100
@@ -21,4 +23,13 @@ module PageHelpers
   def link_entry?(article_or_link)
     article_or_link.data.key?('url')
   end
+
+  def interlude_url(url)
+    "https://interlude.herokuapp.com/set?url=" + URI.escape(url)
+  end
+
+  def interlude_link_to(name, url)
+    link_to(name, interlude_url(url), title: url)
+  end
+
 end

@@ -3,7 +3,7 @@
 - for entry in coalesce(articles, links)
   - if(link_entry?(entry))
     %h1.link
-      = link_to(entry.data['title'], entry.data['url'])
+      = interlude_link_to(entry.data['title'], entry.data['url'])
   - else
     %h1
       = link_to(entry.data['title'], entry)
