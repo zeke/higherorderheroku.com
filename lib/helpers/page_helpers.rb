@@ -24,12 +24,4 @@ module PageHelpers
     article_or_link.data.key?('url')
   end
 
-  def interlude_url(url)
-    "https://interlude.herokuapp.com/set?url=" + URI.escape(url)
-  end
-
-  def interlude_link_to(name, url)
-    link_to(name, interlude_url(url), title: url)
-  end
-
 end
